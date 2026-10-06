@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: joint-invest-payment-service
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/joint_invest_payments}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  flyway:
+    enabled: true
+
+server:
+  port: ${PORT:8081}
+
+joint-invest:
+  payments:
+    provider: ${PAYMENT_PROVIDER:demo}
+    live-enabled: ${LIVE_PAYMENTS_ENABLED:false}
